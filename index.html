@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aniversariantes - G.O. Fortalecidos na Fé</title>
+    <link rel="icon" href="img/icons/nssap-icon.jpg" type="image/jpg">
+    <link rel="stylesheet" href="assets/styles/style.css">
+</head>
+<body>
+    <header>
+        <nav id="navBar">
+            <img src="img/icons/burger-icon.svg" alt="burger-icon" class="burger-icon" id="burgerIcon" onclick="clickMenu()">
+            <img src="img/icons/close-icon.svg" alt="close-icon" class="close-icon" id="closeIcon" onclick="clickMenu()">
+            <div style="background-color: rgb(0, 0, 0, 0.7); height: 100vh; width: 100vw; position: fixed;align-items: center; justify-content: center; left: 0; top: 0; z-index: 99; margin: 0px; padding: 0px;" id="backNav"></div>
+            <ul id="itensNav">
+                <li style="margin-top: 60px;"><a href="#janeiro">Janeiro (01)</a></li>
+                <li><a href="#fevereiro">Fevereiro (02)</a></li>
+                <li><a href="#marco">Março (03)</a></li>
+                <li><a href="#abril" onclick="noData()">Abril (04)</a></li>
+                <li><a href="#maio">Maio (05)</a></li>
+                <li><a href="#junho" onclick="noData()">Junho (06)</a></li>
+                <li><a href="#julho">Julho (07)</a></li>
+                <li><a href="#agosto">Agosto (08)</a></li>
+                <li><a href="#setembro">Setembro (09)</a></li>
+                <li><a href="#outubro">Outubro (10)</a></li>
+                <li><a href="#novembro">Novembro (11)</a></li>
+                <li><a href="#dezembro">Dezembro (12)</a></li>
+                <div class="social-media-btns">
+                    <div class="instagram-btn"> 
+                        <a href="https://www.instagram.com" target="_blank">
+                            <img src="img/icons/instagram-icon.svg" alt="instagram-icon">
+                        </a>
+                    </div>
+                    <div class="canva-btn">
+                        <a href="https://www.canva.com" target="_blank">
+                            <img src="img/icons/canva-icon.svg" alt="canva-icon">
+                        </a>
+                    </div>
+                </div>
+            </ul>
+
+        </nav>
+    </header>
+
+    <a id="notifBtn" class="notif-btn" href="#" style="display: none;">
+        <img src="img/icons/notif-icon.svg" alt="notif-icon" height="35">
+    </a>
+
+    <div id="buttonTop" class="button-top" style="display: none;">
+        <a href="#top">
+            <img src="img/icons/arrow-icon.svg" alt="arrow">
+        </a>
+    </div>
+
+    <div id="buttonBottom" class="button-bottom" style="display: none;">
+        <a href="#footer">
+            <img src="img/icons/arrow-icon.svg" alt="arrow">
+        </a>
+    </div>
+
+    <main>
+        <section id="aniversariantes">
+            <h1>Aniversariantes - Grupo de Oração Fortalecidos na Fé</h1>
+            <article id="janeiro">
+                <h2 style="font-size: 30px; text-shadow: 0px 2px 10px black;">Janeiro</h2>
+
+                <div>
+                    <ul>
+                        <!-- Lorrany -->
+                        <div class="perfil">
+                            <img src="img/icons/nssap-icon.jpg" alt="" class="img-perfil"> 
+                            <div class="download-btn">
+                                <p id="name">Lorrany
+                                <img src="img/icons/copy-icon.svg" alt="copy-icon" id="textCopy" class="copy-icon-name">
+                                </p>
+                                <a href="img/icons/nssap-icon.jpg" download>
+                                    <img src="img/icons/download-icon.svg" alt="download-icon">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="more-infos">
+                            <li style="padding-right: 65px; border-right: 1px solid black;">
+                                <p class="min">Ministério/Pastoral:</p>
+                                <div style="display: flex;">
+                                    <p class="min-p" id="minister">Jovem</p>
+                                    <img src="img/icons/copy-icon.svg" alt="copy-icon" id="textCopy" class="copy-icon-min" style="display: flex; align-items: center; position: absolute; left: 180px; margin-top: 45px;">
+                                </div>
+                            </li>
+                            <li style="justify-content: center; text-align: center;">
+                                <p class="data">Data de Aniversário:</p>
+                                <p class="data-p">09/01</p>
+                            </li>
+                        </div>
+
+                        <!-- Murilo -->
+                        <div class="perfil">
+                            <img src="img/icons/nssap-icon.jpg" alt="" class="img-perfil"> 
+                            <div class="download-btn">
+                                <p id="name">Murilo</p>
+                                <img src="img/icons/copy-icon.svg" alt="copy-icon" id="textCopy" class="copy-icon-name" style="left: 90px">
+                                <a href="img/.png" download>
+                                    <img src="img/icons/download-icon.svg" alt="download-icon">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="more-infos">
+                            <li style="padding-right: 55px; border-right: 1px solid black;">
+                                <p class="min">Ministério/Pastoral:</p>
+                                <div style="display: flex;">
+                                    <p class="min-p" id="minister">Música</p>
+                                    <img src="img/icons/copy-icon.svg" alt="copy-icon" id="textCopy" class="copy-icon-min" style="display: flex; align-items: center; position: absolute; left: 185px; margin-top: 45px;">
+                                </div>
+                            </li>
+                            <li style="justify-content: center; text-align: center;">
+                                <p class="data">Data de Aniversário:</p>
+                                <p class="data-p">24/01</p>
+                            </li>
+                        </div>
+
+                        <!-- Hallyson -->
+                        <div class="perfil">
+                            <img src="img/Hallyson.png" alt="Halysson" class="img-perfil"> 
+                            <div class="download-btn">
+                                <p id="name">Halysson César</p>
+                                <img src="img/icons/copy-icon.svg" alt="copy-icon" id="textCopy" class="copy-icon-name" style="left: 180px;">
+                                <a href="img/Hallyson.png" download>
+                                    <img src="img/icons/download-icon.svg" alt="download-icon">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="more-infos">
+                            <li style="padding-right: 55px; border-right: 1px solid black;">
+                                <p class="min">Ministério/Pastoral:</p>
+                                <div style="display: flex;">
+                                    <p class="min-p" id="minister">Música</p>
+                                    <img src="img/icons/copy-icon.svg" alt="copy-icon" id="textCopy" class="copy-icon-min" style="display: flex; align-items: center; position: absolute; left: 190px; margin-top: 45px;">
+                                </div>
+                            </li>
+                            <li style="justify-content: center; text-align: center;">
+                                <p class="data">Data de Aniversário:</p>
+                                <p class="data-p">31/01</p>
+                            </li>
+                        </div>
+                    </ul>
+                </div>
+            </article>
+
+            <article id="fevereiro">
+                <h2 style="font-size: 30px; text-shadow: 0px 2px 10px black; margin: 40px 0px 40px 0px;">Fevereiro</h2>
+
+                <div>
+                    <ul>
+                        <!-- Letícia -->
+                        <div class="perfil">
+                            <img src="img/Letícia.png" alt="Letícia" class="img-perfil"> 
+                            <div class="download-btn">
+                                <p id="name">Letícia
+                                    <img src="img/icons/copy-icon.svg" alt="copy-icon" id="textCopy" class="copy-icon-name" style="left: 90px;">
+                                </p>
+                                <a href="img/icons/nssap-icon.jpg" download>
+                                    <img src="img/icons/download-icon.svg" alt="download-icon">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="more-infos">
+                            <li style="padding-right: 65px; border-right: 1px solid black;">
+                                <p class="min">Ministério/Pastoral:
+                                <div style="display: flex;">
+                                    <p class="min-p" id="minister">Música</p>
+                                    <img src="img/icons/copy-icon.svg" alt="copy-icon" id="textCopy" class="copy-icon-min" style="display: flex; align-items: center; position: absolute; left: 180px; margin-top: 45px;">
+                                </div>
+                            </p>
+                            </li>
+                            <li style="justify-content: center; text-align: center;">
+                                <p class="data">Data de Aniversário:</p>
+                                <p class="data-p">02/02</p>
+                            </li>
+                        </div>
+
+                        <!-- Da Luz -->
+                        <div class="perfil">
+                            <img src="img/icons/nssap-icon.jpg" alt="" class="img-perfil"> 
+                            <div class="download-btn">
+                                <p id="name">Da Luz
+                                    <img src="img/icons/copy-icon.svg" alt="copy-icon" id="textCopy" class="copy-icon-name" style="left: 95px;">
+                                </p>
+                                <a href="img/Hallyson.png" download>
+                                    <img src="img/icons/download-icon.svg" alt="download-icon">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="more-infos">
+                            <li style="padding-right: 40px; border-right: 1px solid black;">
+                                <p class="min">Ministério/Pastoral:
+                                <div style="display: flex;">
+                                    <p class="min-p" id="minister">Pregação</p>
+                                    <img src="img/icons/copy-icon.svg" alt="copy-icon" id="textCopy" class="copy-icon-min" style="display: flex; align-items: center; position: absolute; left: 205px; margin-top: 45px;">
+                                </div>
+                                </p>
+                            </li>
+                            <li style="justify-content: center; text-align: center;">
+                                <p class="data">Data de Aniversário:</p>
+                                <p class="data-p" style="right: 10px;">08/02</p>
+                            </li>
+                        </div>
+
+                        <!-- Rosimeire Joaquim -->
+                        <div class="perfil">
+                            <img src="img/icons/nssap-icon.jpg" alt="" class="img-perfil"> 
+                            <div class="download-btn">
+                                <p id="name">Rosimeire Joaquim
+                                    <img src="img/icons/copy-icon.svg" alt="copy-icon" id="textCopy" class="copy-icon-name" style="left: 215px;">
+                                </p>
+                                <a href="" download>
+                                    <img src="img/icons/download-icon.svg" alt="download-icon">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="more-infos">
+                            <li style="padding-right: 45px; border-right: 1px solid black;">
+                                <p class="min">Ministério/Pastoral:
+                                <div style="display: flex;">
+                                    <p class="min-p" id="minister" style="margin-left: 45px;">Intercessão</p>
+                                    <img src="img/icons/copy-icon.svg" alt="copy-icon" id="textCopy" class="copy-icon-min" style="display: flex; align-items: center; position: absolute; left: 200px; margin-top: 45px;">
+                                </div>
+                                </p>
+                            </li>
+                            <li style="justify-content: center; text-align: center; margin-left: 45px;">
+                                <p class="data">Data de Aniversário:</p>
+                                <p class="data-p" style="right: 50px;">17/02</p>
+                            </li>
+                        </div>
+
+                        <!-- Thalya -->
+                        <div class="perfil">
+                            <img src="img/icons/nssap-icon.jpg" alt="" class="img-perfil"> 
+                            <div class="download-btn">
+                                <p id="name">Thalya
+                                <img src="img/icons/copy-icon.svg" alt="copy-icon" id="textCopy" class="copy-icon-name" style="left: 95px;">
+                                </p>
+                                <a href="img/.png" download>
+                                    <img src="img/icons/download-icon.svg" alt="download-icon">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="more-infos">
+                            <li style="padding-right: 55px; border-right: 1px solid black;">
+                                <p class="min" style="justify-content: space-between;">Ministério/Pastoral:
+                                <div style="display: flex;">
+                                    <p class="min-p" id="minister">Música</p>
+                                    <img src="img/icons/copy-icon.svg" alt="copy-icon" id="textCopy" class="copy-icon-min" style="display: flex; align-items: center; position: absolute; left: 185px; margin-top: 45px;">
+                                </div>
+                                </p>
+                            </li>
+                            <li style="justify-content: center; text-align: center;">
+                                <p class="data">Data de Aniversário:</p>
+                                <p class="data-p">28/02</p>
+                            </li>
+                        </div>
+                    </ul>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <footer id="footer">
+        <p style="position: sticky; bottom: 0; background-color: black; color: white; font-family: 'DM Sans', Roboto, monospace, sans-serif; margin: 0; padding: 5px; width: 100vw; text-align: center; font-size: 15px;">Per ipsum, cum ipso, in ipso, et pro ipsum 🇻🇦.</p>
+    </footer>
+
+    <script src="assets/scripts/script.js"></script>
+</body>
+</html>

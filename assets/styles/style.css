@@ -1,0 +1,399 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cal+Sans&display=swap'); /* DM Sans, Poppins & Cal Sans*/
+
+@keyframes moveBg {
+    0% {
+        box-shadow: 2px 4px 10px blue;
+    }
+    20% {
+        box-shadow: 2px -2px 10px blue;
+    }
+    40% {
+        box-shadow: -2px 2px 10px blue;
+    }
+    60% {
+        box-shadow: 2px -2px 10px blue;
+    }
+    80% {
+        box-shadow: -2px 2px 10px blue;
+    }
+    100% {
+        box-shadow: 2px 4px 10px blue;
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    max-width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+ 
+    background-color: #7c90f5;
+    overflow-x: hidden;
+}
+
+#aniversariantes h1 {
+    font-family: "DM Sans", Roboto, sans-serif;
+    font-size: 25px;
+    color: #fff;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    position: relative;
+    left: -10px;
+    margin-top: 10px;
+    padding: 0px 20px 10px 20px;
+
+    border-bottom: 1px solid #5671f6;
+}
+
+#aniversariantes h2 {
+    font-family: "DM Sans", Roboto, sans-serif;
+    font-size: 20px;
+    color: #fff;
+    
+    text-align: center;
+}
+
+.img-perfil {
+    height: auto;
+    width: 90%;
+
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px black;
+
+    position: relative;
+}
+
+.download-btn {
+    position: absolute;
+    margin-top: -39px;
+    background-color: blue;
+    height: 50px;
+    width: 316px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.download-btn p {
+    color: white;
+    font-family: "Cal Sans", Roboto, sans-serif;
+    font-size: 23px;
+    margin-left: 20px;
+    margin-top: 8px;
+}
+
+.download-btn img {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    
+    top: 3px;
+    right: 10px;
+    
+    
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+#name {
+    cursor: pointer;
+}
+
+.more-infos {
+    background-color: blue;
+    padding: 20px;
+    margin-top: 15px;
+    margin-bottom: 25px;
+    
+    width: 275px;
+    height: 50px;
+    border-radius: 15px;
+    overflow-x: hidden;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    overflow: hidden;
+    box-shadow: 0px 4px 10px black;
+}
+
+.more-infos .min {
+    position: absolute;
+    left: 60px;
+    margin-top: 10px;
+
+    font-family: "Poppins", Roboto, sans-serif;
+    color: rgb(255, 255, 255, 0.8);
+    font-size: 17px;
+}
+
+.more-infos .data {
+    position: absolute;
+    right: 45px;
+    margin-top: -10px;
+    width: 25%;
+    text-align: center;
+    
+    font-family: "Poppins", Roboto, sans-serif;
+    color: rgb(255, 255, 255, 0.8);
+    font-size: 15px;
+}
+
+.more-infos .data-p {
+    font-family: "Cal Sans", Roboto, sans-serif;
+    position: relative;
+    margin-left: 40px;
+    right: 5px;
+    top: 20px;
+    font-size: 20px;
+    color: white;
+}
+
+.more-infos .min-p {
+    position: relative;
+    top: 10px;
+    margin-left: 35px;
+    font-family: "Cal Sans", Roboto, sans-serif;
+    font-size: 25px;
+    color: white;
+    cursor: pointer;
+}
+
+ul li {
+    list-style-type: none;
+}
+
+nav ul {
+    position: fixed;
+    right: 15px;
+    z-index: 1000;
+
+    background-color: rgb(3, 3, 154);
+    height: 100vh;
+    width: 45%;
+    margin-right: -15px;
+    margin-top: 0;
+}
+
+nav ul li {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    
+    background-color: rgb(255, 255, 255, 0.4);
+    border-bottom: rgb(255, 255, 255, 0.8);
+    padding: 8px;
+    border-radius: 10px;
+    
+    margin-bottom: 5px;
+    width: 90%;
+    margin-left: -20px;
+    transition: 0.1s ease-in-out;
+}
+
+nav ul li:hover {
+    background-color: rgb(255, 255, 255, 0.6);
+    border-bottom: rgb(255, 255, 255, 0.8);
+}
+
+nav ul li:active {
+    transform: scale(0.8);
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-family: "Poppins", Roboto, sans-serif; 
+    font-size: 18px;
+}
+
+.social-media-btns {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: fixed;
+    top: 0;
+    right: 105px;
+    gap: 10px;
+    z-index: 9999;
+
+    margin-top: 10px;
+}
+
+.instagram-btn, .canva-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.instagram-btn img {
+    height: 40px;
+    width: auto;
+}
+
+.canva-btn img {
+    height: 40px;
+    width: auto;
+}
+
+.notif-btn {
+    position: fixed;
+    left: 20px;
+    top: 15px;
+    background-color: rgb(3, 3, 154);
+    padding: 5px 7.5px 5px 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+
+    animation: moveBg 3s infinite linear;
+    transition: 0.3s ease-in-out;
+}
+
+.notif-btn:hover {
+    background-color: rgb(3, 3, 97);
+}
+
+
+.button-top {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+
+    transition: opacity 0.5s ease-in-out;
+}
+
+.button-top img {
+    transform: rotate(-45deg);
+    height: 50px;
+    background-color: rgb(3, 3, 154);
+    padding: 3px 3px;
+    border-radius: 50%;
+
+    animation: 3s moveBg infinite linear;
+    transition: 0.3s ease-in-out;
+}
+
+.button-top img:hover {
+    background-color: rgb(3, 3, 97);
+}
+
+.button-bottom {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    
+    transition: opacity 0.5s ease-in-out;
+}
+
+.button-bottom img {
+    transform: rotate(135deg);
+    height: 50px;
+    background-color: rgb(3, 3, 154);
+    padding: 3px 3px;
+    border-radius: 50%;
+    
+    animation: 3s moveBg infinite linear;
+    transition: 0.3s ease-in-out;
+}
+
+.button-bottom img:hover {
+    background-color: rgb(3, 3, 97);
+}
+
+.menu-container {
+    display: none;
+}
+
+.burger-icon {
+    margin-top: 10px;
+}
+
+.burger-icon, .close-icon {
+    display: none;
+}
+
+.copy-icon-min, .copy-icon-name {
+    height: 15px;
+    width: auto;
+}
+
+.download-btn .copy-icon-name {
+    position: absolute;
+    top: 12px;
+    height: 25px;
+}
+
+.copy-icon-name {
+    position: absolute;
+    left: 105px;
+}
+
+.copy-icon-min {
+    position: absolute;
+    height: 20px;
+}
+
+#backNav {
+    transition: 0.2s ease-in-out;
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    nav ul {
+        display: none;
+    }
+    
+    nav {
+        display: block;
+    }
+
+    #backNav {
+        display: none;
+    }
+
+    .burger-icon {
+        position: fixed;
+        right: 5px;
+        top: 10px;
+        height: 40px;
+        transform: rotate(180deg);
+        cursor: pointer;
+        display: block;
+        z-index: 2000;
+    }
+    
+    .close-icon {
+        right: 5px;
+        top: 10px;
+        display: none;
+        height: 45px;
+        position: fixed;
+        cursor: pointer;
+        z-index: 2000;
+    }
+
+    .img-container {
+        width: auto;
+        height: 200px;
+
+        transition: 0.2s ease-in-out;
+    }
+
+}
