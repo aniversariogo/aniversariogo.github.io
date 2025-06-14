@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Joystick RC</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        * {
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height: 100vh;
+            
+            background: #0b2b33;
+            color: white;
+            font-family: sans-serif;
+            text-align: center;
+            margin: 0;
+            transition: background .3s ease-in-out;
+        }
+
+        #joystick {
+            margin-top: 50px;
+            width: 200px;
+            height: 200px;
+            background: #1e6b77;
+            border-radius: 50%;
+            position: relative;
+            margin-left: auto;
+            margin-right: auto;
+            touch-action: none;
+            box-shadow: 0px 0px 10px rgb(0, 0, 0);
+        }
+
+        #stick {
+            width: 60px;
+            height: 60px;
+            background: #a1e7fa;
+            border-radius: 50%;
+            position: absolute;
+            top: 70px;
+            left: 70px;
+        }
+        
+        #theme {
+            border-radius: 20px 10px;
+            background-color: #1e6b77;
+            padding: 3px 5px 2px 5px;
+
+            position: relative;
+            top: -40px;
+        }
+        
+        .circle {
+            background-color: rgb(255, 255, 255);
+            padding: 14px;
+            border-radius: 50%;
+            
+            position: absolute;
+            cursor: pointer;
+            top: 3.8px;
+            left: 35px;
+            
+            transition: .3s ease-in-out;
+        }
+        
+        #circleStick {
+            background-color: #1e6b77;
+            padding: 28px;
+            border: 4px solid #a1e7fa;
+            border-radius: 50%;
+            
+            position: absolute;
+            top: 68px;
+            left: 68px;
+            
+            transition: .3s ease-in-out;
+        }
+
+        .btn-theme img {
+            position: relative;
+            cursor: pointer;
+        }
+
+        #buttons {
+            position: relative;
+            background-color: #1e6b77;
+            padding: 10px 30px;
+            top: 60px;
+            width: fit-content;
+            border-radius: 20px;
+
+            display: flex;
+            justify-content: center;
+            gap: 5px;
+        }
+        
+        #buttons li {
+            list-style: none;
+            padding: 10px;
+            
+            display: flex;
+        }
+
+        /* light theme */
+        .light {
+            transition: background .3s ease-in-out;
+        }
+        
+        body.light {
+            background-color: white;
+            transition: background .3s ease-in-out;
+        }
+        
+        h2.light {
+            color: #0b2b33;
+        }
+        
+        .circle.light {
+            transition: .3s ease-in-out;
+            background-color: #1e6b77;
+            left: 4px;
+        }
+        
+        #joystick.light {
+            background: #717171;
+        }
+        
+        #stick.light {
+            background: #fafbfb;
+        }
+        
+        #theme.light {
+            transition: .3s ease-in-out;
+            background-color: #0b2b33;
+        }
+
+        #buttons.light {
+            background-color: #717171;
+        }
+
+        @keyframes rodar {
+            to {
+                transform: rotate(0deg);
+            } 
+            
+            from {
+                transform: rotate(-1000deg);
+            }
+        }
+
+        #gearIcon {
+            height: 50px;
+            position: fixed;
+            left: 5px;
+            animation: rodar 5s infinite linear;
+        }
+
+        .linha {
+            position: absolute;
+            width: 4px;
+            height: 200px;
+            background-color: #a1e7fa; /* cor verde-água semelhante à imagem */
+            top: 0;
+            left: 98px;
+            transform-origin: center;
+            z-index: 0;
+            border-radius: 2px;
+        }
+
+        .linha1 {
+            transform: rotate(45deg);
+        }
+
+        .linha2 {
+            transform: rotate(-45deg);
+        }
+
+    </style>
+</head>
+
+<body>
+    <img src="assets/images/gear-icon.svg" alt="gear-icon" id="gearIcon">
+
+    <div class="btn-theme" id="theme">
+      <img src="assets/images/sun-icon.svg" alt="sun-icon" height="27" class="sun-icon">
+      <img src="assets/images/moon-icon.svg" alt="moon-icon" height="25" class="moon-icon">
+      <div class="circle"></div>
+    </div>
+
+    <h2>Joystick Carrinho</h2>
+    <div id="joystick">
+        <div class="linha linha1"></div>
+        <div class="linha linha2"></div>
+        <div id="circleStick"></div>
+        <div id="stick"></div>
+    </div>
+
+    <ul id="buttons">
+        <li style="border-right: 2px solid #a1e7fa; padding-right: 15px;">A</li>
+        <li style="border-right: 2px solid #a1e7fa; padding-right: 15px;">B</li>
+        <li style="border-right: 2px solid #a1e7fa; padding-right: 15px;">C</li>
+        <li>D</li>
+    </ul>
+
+    <script>
+        const stick = document.getElementById("stick");
+        const joystick = document.getElementById("joystick");
+        let centerX = joystick.offsetWidth / 2;
+        let centerY = joystick.offsetHeight / 2;
+        let sending = false;
+
+        let sendInterval = setInterval(() => {
+            if (!sending) return;
+
+            let dx = parseInt(stick.style.left) + 30 - centerX;
+            let dy = centerY - (parseInt(stick.style.top) + 30);
+
+            let angle = Math.atan2(dy, dx);
+            let magnitude = Math.min(Math.sqrt(dx * dx + dy * dy), 70);
+
+            let cmd = "P";
+            if (magnitude > 20) {
+                if (angle > -0.78 && angle < 0.78) cmd = "D";
+                else if (angle >= 0.78 && angle < 2.35) cmd = "F";
+                else if (angle >= 2.35 || angle <= -2.35) cmd = "E";
+                else if (angle < -0.78 && angle > -2.35) cmd = "B";
+            }
+
+            fetch("/comando?valor=" + cmd);
+        }, 100);
+
+        function setStickPosition(x, y) {
+            const max = 70;
+            let dx = x - centerX;
+            let dy = y - centerY;
+            let dist = Math.sqrt(dx * dx + dy * dy);
+            if (dist > max) {
+                dx = (dx * max) / dist;
+                dy = (dy * max) / dist;
+            }
+            stick.style.left = centerX + dx - 30 + "px";
+            stick.style.top = centerY + dy - 30 + "px";
+        }
+
+        function resetStick() {
+            stick.style.left = "70px";
+            stick.style.top = "70px";
+            sending = false;
+            fetch("/comando?valor=P");
+        }
+
+        joystick.addEventListener("touchstart", (e) => {
+            sending = true;
+        });
+
+        joystick.addEventListener("touchmove", (e) => {
+            e.preventDefault();
+            const rect = joystick.getBoundingClientRect();
+            const touch = e.touches[0];
+            const x = touch.clientX - rect.left;
+            const y = touch.clientY - rect.top;
+            setStickPosition(x, y);
+        });
+
+        joystick.addEventListener("touchend", (e) => {
+            resetStick();
+        });
+
+        // Para mouse também (testes no navegador)
+        joystick.addEventListener("mousedown", (e) => {
+            sending = true;
+            joystick.addEventListener("mousemove", onMouseMove);
+        });
+
+        function onMouseMove(e) {
+            const rect = joystick.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            setStickPosition(x, y);
+        }
+
+        document.addEventListener("mouseup", (e) => {
+            joystick.removeEventListener("mousemove", onMouseMove);
+            resetStick();
+        });
+
+        let theme = document.getElementById('theme')
+        let elementosParaAlterar = document.querySelectorAll('body, h2, #joystick, #stick, #buttons, .circle');
+
+        theme.addEventListener('click', () => {
+            theme.classList.toggle('light')
+            elementosParaAlterar.forEach(elemento => {
+                elemento.classList.toggle('light');
+            });
+        })
+    </script>
+</body>
+
+</html>
